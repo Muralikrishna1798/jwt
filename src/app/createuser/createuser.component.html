@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="card" style="padding: 20px">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <input
+        type="text"
+        id="userame"
+        name="userName"
+        [(ngModel)]="createUser.username"
+        placeholder="Enter you Username"
+        class="form-control mb-3"
+      />
+      <input
+        type="password"
+        id="password"
+        name="userPassword"
+        placeholder="Enter your Password"
+        [(ngModel)]="createUser.userPassword"
+        class="form-control mb-3"
+      />
+      <input
+        type="text"
+        id="userFirstName"
+        name="userFirstName"
+        placeholder="Enter your FirstName"
+        [(ngModel)]="createUser.userFirstName"
+        class="form-control mb-3"
+      />
+      <input
+        type="text"
+        id="userLastName"
+        name="userLastName"
+        placeholder="Enter your LastName"
+        [(ngModel)]="createUser.userLastName"
+        class="form-control mb-3"
+      />
+      <button
+        type="submit"
+        class="btn btn-outline-primary m-2"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+      <button
+        type="submit"
+        class="btn btn-outline-danger"
+        >
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

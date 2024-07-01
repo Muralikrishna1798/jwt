@@ -8,19 +8,21 @@ export class UserAuthService {
   constructor() { }
 
   public setRoles(roles:any[]){
-    localStorage.setItem("roles",JSON.stringify(roles));
+    localStorage.setItem('roles',JSON.stringify(roles));
   }
 
   public getRoles(): any[]{
-    return JSON.parse(localStorage.getItem('roles') || '{}');
+    const roles = localStorage.getItem('roles');
+    return roles ? JSON.parse(roles) : [];
+    // return JSON.parse(localStorage.getItem('roles'));
   }
 
-  public setToken(jwtToken:string){
+  public setToken(jwtToken:any){
     localStorage.setItem("jwtToken", jwtToken)
   }
 
-  public getToken(): string{
-    return localStorage.getItem('jwtToken') || '{}';
+  public getToken(): any{
+    return localStorage.getItem('jwtToken');
   }
 
   public clear(){

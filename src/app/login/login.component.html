@@ -1,25 +1,29 @@
 <div class="container mt-5">
-    <div class="card" style="padding: 20px;">
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <input type="text"
-            ngModel
-            name="userName"
-            id="userName"
-            placeholder="Enter your username"
-            class="form-control mb-3"
-            >
-
-            <input type="password"
-            ngModel
-            name="userPassword"
-            id="userPassword"
-            placeholder="Enter your password"
-            class="form-control mb-3"
-            >
-
-            <input type="submit"
-            value="Login"
-            class="btn btn-outline-primary form-control rounded-0">
-        </form>
-    </div>
+  <div class="card" style="padding: 20px">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <input
+        type="text"
+        id="userame"
+        name="userName"
+        [(ngModel)]="user.username"
+        placeholder="Enter your username"
+        class="form-control mb-3"
+      />
+      <input
+        type="password"
+        id="password"
+        name="userPassword"
+        placeholder="Enter your password"
+        [(ngModel)]="user.password"
+        class="form-control mb-3"
+      />
+      <button
+        type="submit"
+        class="btn btn-outline-primary"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+    </form>
+  </div>
 </div>
