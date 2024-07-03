@@ -7,6 +7,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { authGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
@@ -17,7 +18,7 @@ export const appConfig: ApplicationConfig = {
       useClass:AuthInterceptor,
       multi: true
     },
-  UserService]
+  UserService, provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync()]
 }
 
 // provideClientHydration()

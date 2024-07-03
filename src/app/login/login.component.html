@@ -1,7 +1,27 @@
 <div class="container mt-5">
   <div class="card" style="padding: 20px">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-      <input
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>User Name</mat-label>
+        <input matInput
+        id="userame"
+        name="userName"
+        [(ngModel)]="user.username" placeholder="Username">
+        <mat-hint>Username</mat-hint>
+      </mat-form-field>
+      <!-- class=w-100 is a bootstrap but the form is angular material -->
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Userpassword</mat-label>
+        <input type="password" matInput 
+        id="password"
+        name="userPassword"
+        [(ngModel)]="user.password"placeholder="Userpassword">
+        <mat-hint>Userpassword</mat-hint>
+      </mat-form-field>
+
+      <button class="w-100" type="submit" mat-raised-button color="primary">Login</button>
+<!-- boostrap form below/ -->
+      <!-- <input
         type="text"
         id="userame"
         name="userName"
@@ -13,8 +33,8 @@
         type="password"
         id="password"
         name="userPassword"
-        placeholder="Enter your password"
         [(ngModel)]="user.password"
+        placeholder="Enter your password"
         class="form-control mb-3"
       />
       <button
@@ -23,7 +43,7 @@
         [disabled]="!loginForm.valid"
       >
         Login
-      </button>
+      </button> -->
     </form>
   </div>
 </div>

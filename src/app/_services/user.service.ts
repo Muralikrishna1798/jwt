@@ -7,7 +7,7 @@ import { UserAuthService } from './user-auth.service';
   providedIn: 'root',
 })
 export class UserService {
-  PATH_OF_API = 'http://localhost:9090';
+  PATH_OF_API = 'http://localhost:8081';
 
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   constructor(private http: HttpClient, private userAuthser: UserAuthService) {}
